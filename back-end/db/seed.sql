@@ -1,4 +1,4 @@
-\c template_test_dev;
+\c capstone;
 
 INSERT INTO test (name) VALUES
 ('Monday'),

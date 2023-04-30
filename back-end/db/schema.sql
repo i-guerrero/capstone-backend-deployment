@@ -1,7 +1,7 @@
-DROP DATABASE IF EXISTS template_test_dev;
-CREATE DATABASE template_test_dev;
+DROP DATABASE IF EXISTS capstone;
+CREATE DATABASE capstone;
 
-\c template_test_dev;
+\c capstone;
 
 DROP TABLE IF EXISTS test;
 
