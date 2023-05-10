@@ -33,7 +33,7 @@ users.get("/:id", async (req, res) => {
 });
 
 //CREATE ROUTE
-users.post("/", checkName, async (req, res) => {
+users.post("/", async (req, res) => {
   try {
     const user = await createUser(req.body);
     return res.json(user);
@@ -44,7 +44,7 @@ users.post("/", checkName, async (req, res) => {
 });
 
 //UPDATE ROUTE
-users.put("/:id", checkName, async (req, res) => {
+users.put("/:id", async (req, res) => {
   try {
     const user = await putUser(req.body, req.params.id);
     return res.json(user);

@@ -15,10 +15,7 @@ const getAllUsers = async () => {
 //GET ONE SHOW
 const getUser = async (id) => {
   try {
-    const oneUser = await db.oneOrNone(
-      "SELECT * FROM users WHERE id=$1",
-      id
-    );
+    const oneUser = await db.oneOrNone("SELECT * FROM users WHERE id=$1", id);
     return oneUser;
   } catch (error) {
     console.log(error);
@@ -30,7 +27,7 @@ const getUser = async (id) => {
 const createUser = async (user) => {
   try {
     const newUser = await db.one(
-      "INSERT INTO users (first_name, last_name, email, company, city, country, user_name, user_pw, user_type, linkedin) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9, $10 RETURNING *",
+      "INSERT INTO users (first_name, last_name, email, company, city, country, user_name, user_pw, user_type, linkedin) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING *",
       [
         user.first_name,
         user.last_name,
@@ -67,6 +64,7 @@ const putUser = async (user, id) => {
         user.user_pw,
         user.user_type,
         user.linkedin,
+        id,
       ]
     );
     return updatedUser;
