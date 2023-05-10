@@ -4,10 +4,9 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
+    "db:init": "psql -U postgres -f db/schema.sql",
     "db:seed": "psql -U postgres -f db/seed.sql",
-    "db:init": "psql -U postgres -f db/schema.sql"
+    "start": "nodemon server.js"
   },
   "author": "",
   "license": "ISC",
@@ -15,6 +14,8 @@
     "cors": "^2.8.5",
     "dotenv": "^14.3.0",
     "express": "^4.17.2",
+    "nodemon": "^2.0.22",
+    "pg": "^8.10.0",
     "pg-promise": "^10.11.1",
     "react-scripts": "5.0.0"
   }

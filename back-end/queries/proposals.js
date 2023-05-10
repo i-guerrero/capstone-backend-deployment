@@ -30,7 +30,7 @@ const getProposal = async (id) => {
 const createProposal = async (proposal) => {
   try {
     const newProposal = await db.one(
-      "INSERT INTO proposals (title, description, impact, status, non_profit_id, mentor_id) VALUES($1, $2, $3, $4, $5, $6 RETURNING *",
+      "INSERT INTO proposals (title, description, impact, status, non_profit_id, mentor_id) VALUES($1, $2, $3, $4, $5, $6) RETURNING *",
       [
         proposal.title,
         proposal.description,
@@ -59,6 +59,7 @@ const putProposal = async (proposal, id) => {
         proposal.status,
         proposal.non_profit_id,
         proposal.mentor_id,
+        id,
       ]
     );
     return updatedProposal;
@@ -87,5 +88,5 @@ module.exports = {
   putProposal,
   deleteProposal,
   getAllProposals,
-  getProposal
+  getProposal,
 };
