@@ -1,6 +1,31 @@
 //CONFIGURATION
 const db = require("../db/dbConfig.js");
 
+//GET ALL INDEX
+const getAllUsers = async () => {
+  try {
+    const allUsers = await db.any("SELECT * FROM users");
+    return allUsers;
+  } catch (error) {
+    console.log(error);
+    return error;
+  }
+};
+
+//GET ONE
+const getUser = async (id) => {
+  try {
+    const oneUser = await db.oneOrNone(
+      "SELECT * FROM users WHERE id=$1",
+      id
+    );
+    return oneUser;
+  } catch (error) {
+    console.log(error);
+    return error;
+  }
+};
+
 //CREATE
 const createUser = async (user) => {
   try {
@@ -69,5 +94,6 @@ module.exports = {
   createUser,
   putUser,
   deleteUser,
+  getUser,
+  getAllUsers,
 };
-``

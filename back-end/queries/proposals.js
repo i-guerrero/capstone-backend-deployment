@@ -1,11 +1,36 @@
 //CONFIGURATION
 const db = require("../db/dbConfig.js");
 
+//GET ALL INDEX
+const getAllProposals = async () => {
+  try {
+    const allProposals = await db.any("SELECT * FROM proposals");
+    return allProposals;
+  } catch (error) {
+    console.log(error);
+    return error;
+  }
+};
+
+//GET ONE
+const getProposal = async (id) => {
+  try {
+    const oneProposal = await db.oneOrNone(
+      "SELECT * FROM proposals WHERE id=$1",
+      id
+    );
+    return oneProposal;
+  } catch (error) {
+    console.log(error);
+    return error;
+  }
+};
+
 //CREATE
 const createProposal = async (proposal) => {
   try {
     const newProposal = await db.one(
-      "INSERT INTO users (first_name, last_name, email, company, city, country, user_name, user_pw, user_type, linkedin) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9, $10 RETURNING *",
+      "INSERT INTO proposals (title, description, impact, status, non_profit_id, mentor_id) VALUES($1, $2, $3, $4, $5, $6 RETURNING *",
       [
         proposal.title,
         proposal.description,
@@ -61,4 +86,6 @@ module.exports = {
   createProposal,
   putProposal,
   deleteProposal,
+  getAllProposals,
+  getProposal
 };
