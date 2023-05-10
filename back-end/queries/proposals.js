@@ -12,7 +12,7 @@ const getAllProposals = async () => {
   }
 };
 
-//GET ONE
+//GET ONE SHOW
 const getProposal = async (id) => {
   try {
     const oneProposal = await db.oneOrNone(

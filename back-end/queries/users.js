@@ -12,7 +12,7 @@ const getAllUsers = async () => {
   }
 };
 
-//GET ONE
+//GET ONE SHOW
 const getUser = async (id) => {
   try {
     const oneUser = await db.oneOrNone(
