@@ -26,3 +26,15 @@ CREATE TABLE users (
     linkedin TEXT
 );
 
+DROP TABLE IF EXISTS proposals;
+
+CREATE TABLE proposals (
+    id SERIAL PRIMARY KEY,
+    title VARCHAR(255),
+    description VARCHAR(255),
+    impact INTEGER,
+    status VARCHAR(255),
+    non_profit_id INTEGER NOT NULL,
+    mentor_id INTEGER
+);
+
