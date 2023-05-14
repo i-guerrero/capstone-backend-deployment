@@ -3,13 +3,6 @@ CREATE DATABASE capstone;
 
 \c capstone;
 
-DROP TABLE IF EXISTS test;
-
-CREATE TABLE test (
-    id SERIAL PRIMARY KEY, 
-    name TEXT
-);
-
 DROP TABLE IF EXISTS users;
 
 CREATE TABLE users (
@@ -38,3 +31,33 @@ CREATE TABLE proposals (
     mentor_id INTEGER
 );
 
+DROP TABLE IF EXISTS proposals;
+
+CREATE TABLE proposals (
+    id SERIAL PRIMARY KEY,
+    title VARCHAR(255),
+    description TEXT NOT NULL,
+    impact TEXT,
+    status VARCHAR(255),
+    non_profit_id INTEGER NOT NULL,
+    mentor_id INTEGER
+);
+
+CREATE TABLE projects (
+    id SERIAL PRIMARY KEY, 
+    technologies TEXT,
+    num_developers INTEGER,
+    date_to_complete DATE, 
+    trello TEXT,
+    project_status TEXT DEFAULT 'pending'
+);
+
+DROP TABLE IF EXISTS users_projects;
+
+CREATE TABLE users_projects (
+    id SERIAL PRIMARY KEY,
+    project_id INTEGER,
+    user_id INTEGER,
+    user_type TEXT,
+    mentee_status TEXT
+);

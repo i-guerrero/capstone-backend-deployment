@@ -18,23 +18,13 @@ app.get("/", (req, res) => {
   res.send("Hello, world!");
 });
 
-/////////////////////////////////////
-// REMOVE AFTER SUCCESSFUL DEPLOYMENT
-/////////////////////////////////////
-const db = require("./db/dbConfig.js");
+// USERS Routes
+const usersController = require("./controllers/usersController");
+app.use("/users", usersController);
 
-app.get("/test", async (req, res) => {
-  try {
-    const allDays = await db.any("SELECT * FROM test");
-    res.json(allDays);
-  } catch (err) {
-    res.json(err);
-  }
-});
-
-/////////////////////////////////////
-// REMOVE AFTER SUCCESSFUL DEPLOYMENT
-/////////////////////////////////////
+// Projects Routes
+const projectsController = require("./controllers/projectsController");
+app.use("/projects", projectsController);
 
 // EXPORT
 module.exports = app;
