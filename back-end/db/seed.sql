@@ -13,7 +13,7 @@ VALUES
 
 INSERT INTO users_projects (project_id, user_id, user_type)
 VALUES
-(2, 1, 'mentor'), (2, 3, 'non_profit'), (4, 1, 'mentor');
+(2, 1, 'mentor'), (2, 3, 'non_profit'), (4, 1, 'mentor'), (1, 1, 'mentor'), (1, 2, 'non-profit');
 
 INSERT INTO users_projects (project_id, user_id, user_type, mentee_status)
 VALUES

@@ -7,7 +7,7 @@ const {
   newProject,
   deleteProject,
   updateProject,
-  getAllBookmarksForProject,
+  getAllUsersOnProject,
 } = require("../queries/projects");
 
 projects.get("/", async (req, res) => {
@@ -50,10 +50,10 @@ projects.delete("/:id", async (req, res) => {
   res.status(200).json(deletedProject);
 });
 
-projects.get("/:projectId/bookmarks", async (req, res) => {
+projects.get("/:projectId/users", async (req, res) => {
   const { projectId } = req.params;
-  const projectBookmarks = await getAllBookmarksForProject(projectId);
-  res.json(projectBookmarks);
+  const projectUsers = await getAllUsersOnProject(projectId);
+  res.json(projectUsers);
 });
 
 module.exports = projects;

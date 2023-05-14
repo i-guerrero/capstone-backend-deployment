@@ -68,10 +68,38 @@ const updateProject = async (project, id) => {
   }
 };
 
+const getAllUsersOnProject = async (id) => {
+  try {
+    const usersByProject = await db.any(
+      `
+            SELECT
+                *
+            FROM
+                users_projects
+            JOIN
+                users
+            ON
+                users.id = users_projects.user_id
+            JOIN
+                projects
+            ON
+                projects.id = users_projects.project_id
+            WHERE
+                users_projects.project_id = $1;
+          `,
+      id
+    );
+    return usersByProject;
+  } catch (err) {
+    return err;
+  }
+};
+
 module.exports = {
   getAllProjects,
   getProject,
   newProject,
   deleteProject,
   updateProject,
+  getAllUsersOnProject,
 };
