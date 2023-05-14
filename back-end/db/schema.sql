@@ -47,17 +47,17 @@ CREATE TABLE projects (
     id SERIAL PRIMARY KEY, 
     technologies TEXT,
     num_developers INTEGER,
-    time_to_complete TEXT, 
-    mentor_id INTEGER REFERENCES users (id),
-    tasks TEXT,
-    status TEXT DEFAULT 'pending'
+    date_to_complete DATE, 
+    trello TEXT,
+    project_status TEXT DEFAULT 'pending'
 );
 
-DROP TABLE IF EXISTS mentees_projects;
+DROP TABLE IF EXISTS users_projects;
 
-CREATE TABLE mentees_projects (
+CREATE TABLE users_projects (
     id SERIAL PRIMARY KEY,
-    mentee_id INTEGER,
     project_id INTEGER,
-    mentee_status TEXT DEFAULT 'pending'
+    user_id INTEGER,
+    user_type TEXT,
+    mentee_status TEXT
 );

@@ -22,10 +22,16 @@ const getProject = async (id) => {
 const newProject = async (project) => {
   try {
     const newProject = await db.one(
-      "INSERT INTO projects (name, verified, admin) VALUES($1, $2, $3) RETURNING *",
-      [project.name, project.verified, project.admin]
+      "INSERT INTO projects (technologies, num_developers, date_to_complete, trello, project_status) VALUES($1, $2, $3, $4, $5) RETURNING *",
+      [
+        project.technologies,
+        project.num_developers,
+        project.date_to_complete,
+        project.trello,
+        project.project_status,
+      ]
     );
-    return newproject;
+    return newProject;
   } catch (err) {
     return err;
   }
@@ -46,37 +52,17 @@ const deleteProject = async (id) => {
 const updateProject = async (project, id) => {
   try {
     const updatedProject = await db.one(
-      "UPDATE projects SET name=$1, verified=$2, admin=$3 where id=$4 RETURNING *",
-      [project.name, project.verified, project.admin, id]
+      "UPDATE projects SET technologies=$1, num_developers=$2, date_to_complete=$3, trello=$4, project_status=$5 WHERE id=$6 RETURNING *",
+      [
+        project.technologies,
+        project.num_developers,
+        project.date_to_complete,
+        project.trello,
+        project.project_status,
+        id,
+      ]
     );
     return updatedProject;
-  } catch (err) {
-    return err;
-  }
-};
-
-const getAllBookmarksForProject = async (id) => {
-  try {
-    const bookmarksByProject = await db.any(
-      `
-          SELECT
-              *
-          FROM
-              projects_bookmarks
-          JOIN
-              projects
-          ON
-              projects.id = projects_bookmarks.project_id
-          JOIN
-              bookmarks
-          ON
-              bookmarks.id = projects_bookmarks.bookmark_id
-          WHERE
-              projects_bookmarks.project_id = $1;
-        `,
-      id
-    );
-    return bookmarksByproject;
   } catch (err) {
     return err;
   }
@@ -88,5 +74,4 @@ module.exports = {
   newProject,
   deleteProject,
   updateProject,
-  getAllBookmarksForProject,
 };
