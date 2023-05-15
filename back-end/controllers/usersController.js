@@ -7,6 +7,7 @@ const {
   putUser,
   getAllUsers,
   getUser,
+  getAllProjectsByUser,
 } = require("../queries/users");
 const { checkName } = require("../validation/checkUsers.js");
 
@@ -63,6 +64,12 @@ users.delete("/:id", async (req, res) => {
   } else {
     res.status(404).json("User Not Found Error 404");
   }
+});
+
+users.get("/:userId/projects", async (req, res) => {
+  const { userId } = req.params;
+  const usersProjects = await getAllProjectsByUser(userId);
+  res.json(usersProjects);
 });
 
 module.exports = users;
