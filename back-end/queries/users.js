@@ -88,10 +88,38 @@ const deleteUser = async (id) => {
   }
 };
 
+const getAllProjectsByUser = async (id) => {
+  try {
+    const projectsByUser = await db.any(
+      `
+            SELECT
+                *
+            FROM
+                users_projects
+            JOIN
+                users
+            ON
+                users.id = users_projects.user_id
+            JOIN
+                projects
+            ON
+                projects.id = users_projects.project_id
+            WHERE
+                users_projects.user_id = $1;
+          `,
+      id
+    );
+    return projectsByUser;
+  } catch (err) {
+    return err;
+  }
+};
+
 module.exports = {
   createUser,
   putUser,
   deleteUser,
   getUser,
   getAllUsers,
+  getAllProjectsByUser,
 };
