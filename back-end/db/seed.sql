@@ -47,7 +47,7 @@ Web hosting service (for example, AWS, Google Cloud, Heroku)', 4, '2024-09-30', 
 
 INSERT INTO users_projects (project_id, user_id, user_type)
 VALUES
-(2, 5, 'mentor'), (2, 2, 'nonprofit'), (2, 8, 'mentee'), (2, 9, 'mentee'), (3, 6, 'mentor'), (3, 3, 'nonprofit'), (3, 10, 'mentee'), (4, 7, 'mentor'), (4, 4, 'nonprofit');
+(2, 5, 'mentor'), (2, 2, 'nonprofit'), (3, 6, 'mentor'), (3, 3, 'nonprofit'), (4, 7, 'mentor'), (4, 4, 'nonprofit');
 
 INSERT INTO users_projects (project_id, user_id, user_type, mentee_status)
 VALUES
@@ -56,5 +56,4 @@ VALUES
 (3, 10, 'mentee', 'pending'),
 (3, 11, 'mentee', 'pending'),
 (3, 12, 'mentee', 'pending'),
-(4, 13, 'mentee', 'pending'),
-(4, 14, 'mentee', 'pending');
+(4, 13, 'mentee', 'pending');
