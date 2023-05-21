@@ -7,15 +7,15 @@ DROP TABLE IF EXISTS users;
 
 CREATE TABLE users (
     id SERIAL PRIMARY KEY,
-    first_name TEXT NOT NULL,
-    last_name TEXT NOT NULL, 
+    first_name TEXT,
+    last_name TEXT, 
     email VARCHAR(255),
-    company TEXT NOT NULL, 
+    company TEXT, 
     city VARCHAR(85),
     country VARCHAR(85),
-    user_name VARCHAR(25) NOT NULL,
-    user_pw VARCHAR(25) NOT NULL,
-    user_type VARCHAR(25) NOT NULL,
+    user_name VARCHAR(25),
+    user_pw VARCHAR(25),
+    user_type VARCHAR(25),
     linkedin TEXT
 );
 
@@ -24,22 +24,10 @@ DROP TABLE IF EXISTS proposals;
 CREATE TABLE proposals (
     id SERIAL PRIMARY KEY,
     title VARCHAR(255),
-    description TEXT NOT NULL,
+    description TEXT ,
     impact TEXT,
     status VARCHAR(255),
-    non_profit_id INTEGER NOT NULL,
-    mentor_id INTEGER
-);
-
-DROP TABLE IF EXISTS proposals;
-
-CREATE TABLE proposals (
-    id SERIAL PRIMARY KEY,
-    title VARCHAR(255),
-    description TEXT NOT NULL,
-    impact TEXT,
-    status VARCHAR(255),
-    non_profit_id INTEGER NOT NULL,
+    non_profit_id INTEGER,
     mentor_id INTEGER
 );
 
