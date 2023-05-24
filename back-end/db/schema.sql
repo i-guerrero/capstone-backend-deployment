@@ -24,7 +24,7 @@ DROP TABLE IF EXISTS proposals;
 CREATE TABLE proposals (
     id SERIAL PRIMARY KEY,
     title VARCHAR(255),
-    description TEXT ,
+    description TEXT,
     impact TEXT,
     status VARCHAR(255),
     non_profit_id INTEGER,
@@ -37,7 +37,8 @@ CREATE TABLE projects (
     num_developers INTEGER,
     date_to_complete DATE, 
     trello TEXT,
-    project_status TEXT DEFAULT 'pending'
+    project_status TEXT DEFAULT 'pending',
+    proposal_id INTEGER
 );
 
 DROP TABLE IF EXISTS users_projects;

@@ -8,12 +8,14 @@ const {
   deleteProject,
   updateProject,
   getAllUsersOnProject,
+  getAllProjectsWithNonProfitNameAndProposalDescription,
 } = require("../queries/projects");
 
 projects.get("/", async (req, res) => {
   try {
-    const allProjects = await getAllProjects();
-
+    const allProjects =
+      await getAllProjectsWithNonProfitNameAndProposalDescription();
+    console.log(allProjects);
     res.json(allProjects);
   } catch (err) {
     res.json(err);

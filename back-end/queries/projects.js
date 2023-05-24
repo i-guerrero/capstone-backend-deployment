@@ -70,10 +70,10 @@ const updateProject = async (project, id) => {
 
 const getAllUsersOnProject = async (id) => {
   try {
-    const usersByProject = await db.any(
+    const allProjects = await db.any(
       `
             SELECT
-                *
+                user.company, proposal.description, projects.technologies, projects.num_developers, projects.date_to_complete
             FROM
                 users_projects
             JOIN
@@ -84,10 +84,44 @@ const getAllUsersOnProject = async (id) => {
                 projects
             ON
                 projects.id = users_projects.project_id
+            JOIN 
+                proposals
+            ON 
+                proposals.
             WHERE
                 users_projects.project_id = $1;
           `,
       id
+    );
+    return usersByProject;
+  } catch (err) {
+    return err;
+  }
+};
+
+const getAllProjectsWithNonProfitNameAndProposalDescription = async () => {
+  try {
+    const usersByProject = await db.any(
+      `
+            SELECT
+                users.company, proposals.impact, projects.technologies, projects.num_developers, projects.date_to_complete
+            FROM
+                users_projects
+            JOIN
+                users
+            ON
+                users.id = users_projects.user_id
+            JOIN
+                projects
+            ON
+                projects.id = users_projects.project_id 
+            JOIN
+              proposals
+            ON 
+              proposals.id = projects.proposal_id
+            WHERE
+                users.id = users_projects.user_id AND users_projects.user_type='nonprofit';
+          `
     );
     return usersByProject;
   } catch (err) {
@@ -102,4 +136,5 @@ module.exports = {
   deleteProject,
   updateProject,
   getAllUsersOnProject,
+  getAllProjectsWithNonProfitNameAndProposalDescription,
 };
