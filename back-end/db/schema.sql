@@ -1,7 +1,7 @@
-DROP DATABASE IF EXISTS capstone;
-CREATE DATABASE capstone;
+DROP DATABASE IF EXISTS capstone_6gdr;
+CREATE DATABASE capstone_6gdr;
 
-\c capstone;
+\c capstone_6gdr
 
 DROP TABLE IF EXISTS users;
 
@@ -30,6 +30,8 @@ CREATE TABLE proposals (
     non_profit_id INTEGER,
     mentor_id INTEGER
 );
+
+DROP TABLE IF EXISTS projects;
 
 CREATE TABLE projects (
     id SERIAL PRIMARY KEY, 

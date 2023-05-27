@@ -1,4 +1,4 @@
-\c capstone;
+\c capstone_6gdr;
 
 INSERT INTO users (first_name, last_name, email, company, city, country, user_name, user_pw, user_type, linkedin)
 VALUES
