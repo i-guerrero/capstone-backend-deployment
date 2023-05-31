@@ -7,14 +7,14 @@ VALUES
 ('Martha', 'Williams', 'HandsforAfrica@gmail.com', 'Hands for Africa', 'Cleveland', 'United States', 'handsforafrica', 'password', 'nonprofit', 'www.linkedin.com/in/HandsForAfrica'),
 ('Maria', 'Alvarez', 'VenezuelanFriends@gmail.com', 'Venezuelan Friends', 'Queens', 'United States', 'venezuelanfriends', 'password', 'nonprofit', 'www.linkedin.com/in/VenezuelanFriends'),
 ('Constance', 'Kane', 'constancekane@gmail.com', 'Columbia', 'Louisville', 'United States', 'constancekane', 'password', 'developer', 'www.linkedin.com/in/constancekane'),
-('Leo', 'Snyder', 'leosnyder@gmail.com', 'Google', 'Los Angeles', 'United States', 'leosnyder2', 'password', 'developer', 'www.linkedin.com/in/leosnyder'),
-('Jordan', 'Harris', 'jordan.harris@gmail.com', 'Microsoft', 'Miami', 'United States', 'jordan.harris', 'password', 'developer', 'www.linkedin.com/in/jordanharris'),
-('Shelly', 'Berry', 'shellyberry@gmail.com', 'Flatiron School', 'Newark', 'United States', 'shellyberry123', 'password', 'developer', 'www.linkedin.com/in/shellyberry'),
-('Megan', 'Lombardo', 'meglombardo@gmail.com', 'General Assembly', 'NYC', 'United States', 'meglombardo', 'password', 'developer', 'www.linkedin.com/in/meganlombardo'),
-('Wendy', 'Ball', 'wendyb@gmail.com', 'Generation USA', 'Chicago', 'United States', 'wendy.ball', 'password', 'developer', 'www.linkedin.com/in/wendyball'),
-('Janina', 'Brown', 'janinabrown@gmail.com', 'Pursuit', 'Brooklyn', 'United States', 'janinabrown', 'password', 'developer', 'www.linkedin.com/in/janinabrown'),
-('Edward', 'Herdon', 'edward.herdon@gmail.com', 'self taught', 'Santa Rosa', 'United States', 'edward.h', 'password', 'developer', 'www.linkedin.com/in/edwardherdon'),
-('Stephanie', 'Foster', 'stephaniefoster@gmail.com', 'Pursuit', 'Brooklyn', 'United States', 'stephaniefoster', 'password', 'developer', 'www.linkedin.com/in/stephaniefoster');
+('Leo', 'Snyder', 'leosnyder@gmail.com', 'Google', 'Los Angeles', 'United States', 'leosnyder2', 'password', 'Non', 'www.linkedin.com/in/leosnyder'),
+('Jordan', 'Harris', 'jordan.harris@gmail.com', 'Microsoft', 'Miami', 'United States', 'jordan.harris', 'password', 'Mentee', 'www.linkedin.com/in/jordanharris'),
+('Shelly', 'Berry', 'shellyberry@gmail.com', 'Flatiron School', 'Newark', 'United States', 'shellyberry123', 'password', 'Mentee', 'www.linkedin.com/in/shellyberry'),
+('Megan', 'Lombardo', 'meglombardo@gmail.com', 'General Assembly', 'NYC', 'United States', 'meglombardo', 'password', 'Mentee', 'www.linkedin.com/in/meganlombardo'),
+('Wendy', 'Ball', 'wendyb@gmail.com', 'Generation USA', 'Chicago', 'United States', 'wendy.ball', 'password', 'Mentee', 'www.linkedin.com/in/wendyball'),
+('Janina', 'Brown', 'janinabrown@gmail.com', 'Pursuit', 'Brooklyn', 'United States', 'janinabrown', 'password', 'Mentee', 'www.linkedin.com/in/janinabrown'),
+('Edward', 'Herdon', 'edward.herdon@gmail.com', 'self taught', 'Santa Rosa', 'United States', 'edward.h', 'password', 'Mentor', 'www.linkedin.com/in/edwardherdon'),
+('Stephanie', 'Foster', 'stephaniefoster@gmail.com', 'Pursuit', 'Brooklyn', 'United States', 'stephaniefoster', 'password', 'Mentor', 'www.linkedin.com/in/stephaniefoster');
 
 
 INSERT INTO proposals (title, description, impact, status, non_profit_id, mentor_id)
