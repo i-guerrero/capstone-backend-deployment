@@ -1,21 +1,21 @@
-DROP DATABASE IF EXISTS capstone;
-CREATE DATABASE capstone;
+DROP DATABASE IF EXISTS capstone_6gdr;
+CREATE DATABASE capstone_6gdr;
 
-\c capstone;
+\c capstone_6gdr
 
 DROP TABLE IF EXISTS users;
 
 CREATE TABLE users (
     id SERIAL PRIMARY KEY,
-    first_name TEXT NOT NULL,
-    last_name TEXT NOT NULL, 
+    first_name TEXT,
+    last_name TEXT, 
     email VARCHAR(255),
-    company TEXT NOT NULL, 
+    company TEXT, 
     city VARCHAR(85),
     country VARCHAR(85),
-    user_name VARCHAR(25) NOT NULL,
-    user_pw VARCHAR(25) NOT NULL,
-    user_type VARCHAR(25) NOT NULL,
+    user_name VARCHAR(25),
+    firebase_uid Text,
+    user_type VARCHAR(25),
     linkedin TEXT
 );
 
@@ -24,24 +24,14 @@ DROP TABLE IF EXISTS proposals;
 CREATE TABLE proposals (
     id SERIAL PRIMARY KEY,
     title VARCHAR(255),
-    description TEXT NOT NULL,
+    description TEXT,
     impact TEXT,
     status VARCHAR(255),
-    non_profit_id INTEGER NOT NULL,
+    non_profit_id INTEGER,
     mentor_id INTEGER
 );
 
-DROP TABLE IF EXISTS proposals;
-
-CREATE TABLE proposals (
-    id SERIAL PRIMARY KEY,
-    title VARCHAR(255),
-    description TEXT NOT NULL,
-    impact TEXT,
-    status VARCHAR(255),
-    non_profit_id INTEGER NOT NULL,
-    mentor_id INTEGER
-);
+DROP TABLE IF EXISTS projects;
 
 CREATE TABLE projects (
     id SERIAL PRIMARY KEY, 
@@ -49,7 +39,8 @@ CREATE TABLE projects (
     num_developers INTEGER,
     date_to_complete DATE, 
     trello TEXT,
-    project_status TEXT DEFAULT 'pending'
+    project_status TEXT DEFAULT 'pending',
+    proposal_id INTEGER
 );
 
 DROP TABLE IF EXISTS users_projects;
