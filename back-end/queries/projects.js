@@ -120,7 +120,7 @@ const getAllProjectsWithNonProfitNameAndProposalDescription = async () => {
             ON 
               proposals.id = projects.proposal_id
             WHERE
-                users.id = users_projects.user_id AND users_projects.user_type='nonprofit';
+                users.id = users_projects.user_id AND users_projects.user_type='Nonprofit';
           `
     );
     return usersByProject;
