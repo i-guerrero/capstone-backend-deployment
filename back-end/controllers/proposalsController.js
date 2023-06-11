@@ -2,6 +2,7 @@
 const express = require("express");
 const proposals = express.Router();
 const {
+  addMentorToProposal,
   createProposal,
   deleteProposal,
   putProposal,
@@ -9,6 +10,7 @@ const {
   getProposal,
 } = require("../queries/proposals");
 const { checkName } = require("../validation/checkProposals");
+const {getUserByFirebaseId} = require("../queries/proposals");
 
 //GET ALL INDEX ROUTE
 proposals.get("/", async (req, res) => {
@@ -53,6 +55,25 @@ proposals.put("/:id", async (req, res) => {
     res.status(500).json({ error: "Internal Server Error 500" });
   }
 });
+
+//MENTOR-PRoposal update
+proposals.put("/:id/mentor", async (req, res) => {
+  const { firebaseId } = req.body;
+  const { id } = req.params;
+  try {
+    const mentor = await getUserByFirebaseId(firebaseId)
+    const proposal = await addMentorToProposal(id, mentor.id)
+    if (proposal.id) {
+      res.status(200).json(proposal);
+    } else {
+      res.status(404).json("User Not Found Error 404");
+    }
+  }
+  catch (error) {
+    console.error(error) 
+    res.status(500).json({ error: "Internal Server Error 500" });
+  }
+}  );
 
 //DELETE ROUTE
 proposals.delete("/:id", async (req, res) => {

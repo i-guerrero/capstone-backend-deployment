@@ -69,6 +69,20 @@ const putProposal = async (proposal, id) => {
   }
 };
 
+//UPdate Mentor Id
+const addMentorToProposal = async (proposalId, mentorId) => {
+  try {
+    const updatedProposal = db.one(
+      "UPDATE proposals SET mentor_id=$1 WHERE id=$2 RETURNING *",
+      [mentorId, proposalId]
+    );
+    return updatedProposal;
+  } catch (error) {
+    console.error(error);
+    return error;
+  }
+};
+
 //DELETE
 const deleteProposal = async (id) => {
   try {
@@ -88,5 +102,5 @@ module.exports = {
   putProposal,
   deleteProposal,
   getAllProposals,
-  getProposal,
+  getProposal, addMentorToProposal
 };

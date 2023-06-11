@@ -1,20 +1,20 @@
 \c capstone_6gdr;
 
-INSERT INTO users (first_name, last_name, email, company, city, country, user_name, user_pw, user_type, linkedin)
+INSERT INTO users (first_name, last_name, email, company, city, country, profile_img, user_type, linkedin)
 VALUES
-('Bob', 'Milton', 'FamilyFlourish@gmail.com', 'Family Flourish Fund', 'Omaha', 'United States', 'Bob_Family_flourish', 'password', 'nonprofit', 'www.linkedin.com/in/Bob_Milton'), 
-('John', 'Jackson', 'HarlemRoots@gmail.com', 'Harlem Roots', 'Harlem', 'United States', 'harlemroots', 'password', 'nonprofit', 'www.linkedin.com/in/harlemroots'),
-('Martha', 'Williams', 'HandsforAfrica@gmail.com', 'Hands for Africa', 'Cleveland', 'United States', 'handsforafrica', 'password', 'nonprofit', 'www.linkedin.com/in/HandsForAfrica'),
-('Maria', 'Alvarez', 'VenezuelanFriends@gmail.com', 'Venezuelan Friends', 'Queens', 'United States', 'venezuelanfriends', 'password', 'nonprofit', 'www.linkedin.com/in/VenezuelanFriends'),
-('Constance', 'Kane', 'constancekane@gmail.com', 'Columbia', 'Louisville', 'United States', 'constancekane', 'password', 'developer', 'www.linkedin.com/in/constancekane'),
-('Leo', 'Snyder', 'leosnyder@gmail.com', 'Google', 'Los Angeles', 'United States', 'leosnyder2', 'password', 'developer', 'www.linkedin.com/in/leosnyder'),
-('Jordan', 'Harris', 'jordan.harris@gmail.com', 'Microsoft', 'Miami', 'United States', 'jordan.harris', 'password', 'developer', 'www.linkedin.com/in/jordanharris'),
-('Shelly', 'Berry', 'shellyberry@gmail.com', 'Flatiron School', 'Newark', 'United States', 'shellyberry123', 'password', 'developer', 'www.linkedin.com/in/shellyberry'),
-('Megan', 'Lombardo', 'meglombardo@gmail.com', 'General Assembly', 'NYC', 'United States', 'meglombardo', 'password', 'developer', 'www.linkedin.com/in/meganlombardo'),
-('Wendy', 'Ball', 'wendyb@gmail.com', 'Generation USA', 'Chicago', 'United States', 'wendy.ball', 'password', 'developer', 'www.linkedin.com/in/wendyball'),
-('Janina', 'Brown', 'janinabrown@gmail.com', 'Pursuit', 'Brooklyn', 'United States', 'janinabrown', 'password', 'developer', 'www.linkedin.com/in/janinabrown'),
-('Edward', 'Herdon', 'edward.herdon@gmail.com', 'self taught', 'Santa Rosa', 'United States', 'edward.h', 'password', 'developer', 'www.linkedin.com/in/edwardherdon'),
-('Stephanie', 'Foster', 'stephaniefoster@gmail.com', 'Pursuit', 'Brooklyn', 'United States', 'stephaniefoster', 'password', 'developer', 'www.linkedin.com/in/stephaniefoster');
+('Bob', 'Milton', 'FamilyFlourish@gmail.com', 'Family Flourish Fund', 'Omaha', 'United States', 'https://www.pluggedin.com/wp-content/uploads/2020/01/bobs-burgers-review-image-1024x587.jpg', 'Nonprofit', 'www.linkedin.com/in/Bob_Milton'), 
+('Tiana', 'Jackson', 'HarlemRoots@gmail.com', 'Harlem Roots', 'Harlem', 'United States', 'https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwcm9maWxlLXBhZ2V8MTl8fHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=900&q=60', 'Nonprofit', 'www.linkedin.com/in/harlemroots'),
+('Martha', 'Williams', 'HandsforAfrica@gmail.com', 'Hands for Africa', 'Cleveland', 'United States', 'https://images.unsplash.com/photo-1521493959102-bdd6677fdd81?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80', 'Nonprofit', 'www.linkedin.com/in/HandsForAfrica'),
+('Maria', 'Alvarez', 'VenezuelanFriends@gmail.com', 'Venezuelan Friends', 'Queens', 'United States', 'https://images.unsplash.com/photo-1621622633934-b910be06148d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dmVuZXp1ZWxhfGVufDB8fDB8fHwy&auto=format&fit=crop&w=1200&q=60', 'Nonprofit', 'www.linkedin.com/in/VenezuelanFriends'),
+('Constance', 'Kane', 'constancekane@gmail.com', 'Columbia', 'Louisville', 'United States', 'https://images.unsplash.com/photo-1601933973783-43cf8a7d4c5f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y29tcHV0ZXIlMjBwZXJzb258ZW58MHx8MHx8fDI%3D&auto=format&fit=crop&w=1200&q=60', 'developer', 'www.linkedin.com/in/constancekane'),
+('Leo', 'Snyder', 'leosnyder@gmail.com', 'Google', 'Los Angeles', 'United States', 'https://images.unsplash.com/photo-1560483647-6a049edeef29?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y29tcHV0ZXIlMjBwZXJzb258ZW58MHx8MHx8fDI%3D&auto=format&fit=crop&w=1200&q=60', 'Nonprofit', 'www.linkedin.com/in/leosnyder'),
+('Jordana', 'Harris', 'jordan.harris@gmail.com', 'Microsoft', 'Miami', 'United States', 'https://images.unsplash.com/photo-1587613864411-969e5288c708?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8Y29tcHV0ZXIlMjBwZXJzb258ZW58MHx8MHx8fDI%3D&auto=format&fit=crop&w=1200&q=60', 'Mentee', 'www.linkedin.com/in/jordanharris'),
+('Shelly', 'Berry', 'shellyberry@gmail.com', 'Flatiron School', 'Newark', 'United States', 'https://images.unsplash.com/photo-1543269664-02e941c052f7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8Y29tcHV0ZXIlMjBwZXJzb258ZW58MHx8MHx8fDI%3D&auto=format&fit=crop&w=1200&q=60', 'Mentee', 'www.linkedin.com/in/shellyberry'),
+('Megan', 'Lombardo', 'meglombardo@gmail.com', 'General Assembly', 'NYC', 'United States', 'https://images.unsplash.com/photo-1573878737226-4f9572c22b69?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGNvbXB1dGVyJTIwcGVyc29ufGVufDB8fDB8fHwy&auto=format&fit=crop&w=1200&q=60', 'Mentee', 'www.linkedin.com/in/meganlombardo'),
+('Wendy', 'Ball', 'wendyb@gmail.com', 'Generation USA', 'Chicago', 'United States', 'https://images.unsplash.com/photo-1531547255897-f400dc1b7de2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGNvbXB1dGVyJTIwcGVyc29ufGVufDB8fDB8fHwy&auto=format&fit=crop&w=1200&q=60', 'Mentee', 'www.linkedin.com/in/wendyball'),
+('Janina', 'Brown', 'janinabrown@gmail.com', 'Pursuit', 'Brooklyn', 'United States', 'https://images.unsplash.com/photo-1573496358773-bdcdbd984982?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGNvbXB1dGVyJTIwcGVyc29ufGVufDB8fDB8fHwy&auto=format&fit=crop&w=1200&q=60', 'Mentor', 'www.linkedin.com/in/janinabrown'),
+('Edward', 'Herdon', 'edward.herdon@gmail.com', 'self taught', 'Santa Rosa', 'United States', 'https://images.unsplash.com/photo-1573878221976-aab98adadabc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGNvbXB1dGVyJTIwcGVyc29ufGVufDB8fDB8fHwy&auto=format&fit=crop&w=1200&q=60', 'Mentor', 'www.linkedin.com/in/edwardherdon'),
+('Niya', 'Foster', 'niyafoster@gmail.com', 'Pursuit', 'Brooklyn', 'United States', 'https://images.unsplash.com/photo-1604933762021-54a5858c9832?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1473&q=80', 'Mentee', 'www.linkedin.com/in/stephaniefoster');
 
 
 INSERT INTO proposals (title, description, impact, status, non_profit_id, mentor_id)
@@ -47,7 +47,7 @@ Web hosting service (for example, AWS, Google Cloud, Heroku)', 4, '2024-09-30', 
 
 INSERT INTO users_projects (project_id, user_id, user_type)
 VALUES
-(2, 5, 'mentor'), (2, 2, 'nonprofit'), (3, 6, 'mentor'), (3, 3, 'nonprofit'), (4, 7, 'mentor'), (4, 4, 'nonprofit'), (1, 6, 'mentor'), (1, 1, 'nonprofit');
+(2, 5, 'mentor'), (2, 2, 'Nonprofit'), (3, 6, 'mentor'), (3, 3, 'Nonprofit'), (4, 7, 'mentor'), (4, 4, 'Nonprofit'), (1, 6, 'mentor'), (1, 1, 'Nonprofit');
 
 INSERT INTO users_projects (project_id, user_id, user_type, mentee_status)
 VALUES

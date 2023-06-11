@@ -13,8 +13,8 @@ CREATE TABLE users (
     company TEXT, 
     city VARCHAR(85),
     country VARCHAR(85),
-    user_name VARCHAR(25),
-    user_pw VARCHAR(25),
+    profile_img TEXT,
+    firebase_uid TEXT,
     user_type VARCHAR(25),
     linkedin TEXT
 );
