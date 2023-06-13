@@ -3,6 +3,7 @@ const express = require("express");
 const users = express.Router();
 const {
   createUser,
+  getUserByFirebaseId,
   deleteUser,
   putUser,
   getAllUsers,
@@ -24,10 +25,20 @@ users.get("/", async (req, res) => {
 // GET SHOW ROUTE
 users.get("/:id", async (req, res) => {
   const { id } = req.params;
-  const user = await getUser(id);
-  console.log(user);
-  if (user) {
-    res.json(user);
+  const userByFirebase = await getUser(id);
+  console.log(userByFirebase);
+  if (userByFirebase) {
+    res.json(userByFirebase);
+  } else {
+    res.status(404).json({ error: "Not Found" });
+  }
+});
+
+users.get("/:id/firebase", async (req, res) => {
+  const { id } = req.params;
+  const userByFirebase = await getUserByFirebaseId(id);
+  if (userByFirebase) {
+    res.json(userByFirebase);
   } else {
     res.status(404).json({ error: "Not Found" });
   }
@@ -36,8 +47,8 @@ users.get("/:id", async (req, res) => {
 //CREATE ROUTE
 users.post("/", async (req, res) => {
   try {
-    const user = await createUser(req.body);
-    return res.json(user);
+    const userByFirebase = await createUser(req.body);
+    return res.json(userByFirebase);
   } catch (error) {
     console.log(error);
     res.status(500).json({ error: "Internal Server Error 500" });
@@ -47,8 +58,8 @@ users.post("/", async (req, res) => {
 //UPDATE ROUTE
 users.put("/:id", async (req, res) => {
   try {
-    const user = await putUser(req.body, req.params.id);
-    return res.json(user);
+    const userByFirebase = await putUser(req.body, req.params.id);
+    return res.json(userByFirebase);
   } catch (error) {
     console.log(error);
     res.status(500).json({ error: "Internal Server Error 500" });
