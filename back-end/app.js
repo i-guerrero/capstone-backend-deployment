@@ -10,7 +10,7 @@ const app = express();
 // MIDDLEWARE
 app.use(cors());
 app.use(express.json()); // Parse incoming JSON
-app.use("/users", allUsers);
+// app.use("/users", allUsers);
 app.use("/proposals", allProposals);
 
 // ROUTES
