@@ -10,7 +10,7 @@ const {
   getProposal,
 } = require("../queries/proposals");
 const { checkName } = require("../validation/checkProposals");
-const {getUserByFirebaseId} = require("../queries/proposals");
+const { getUserByFirebaseId } = require("../queries/proposals");
 
 //GET ALL INDEX ROUTE
 proposals.get("/", async (req, res) => {
@@ -37,8 +37,9 @@ proposals.get("/:id", async (req, res) => {
 //CREATE ROUTE
 proposals.post("/", async (req, res) => {
   try {
-    const user = await createProposal(req.body);
-    return res.json(user);
+    // const user = await getUserByFirebaseId(req.body.firebaseId)
+    const newProposal = await createProposal(req.body);
+    return res.json(newProposal);
   } catch (error) {
     console.log(error);
     res.status(500).json({ error: "Internal Server Error 500" });
@@ -61,19 +62,18 @@ proposals.put("/:id/mentor", async (req, res) => {
   const { firebaseId } = req.body;
   const { id } = req.params;
   try {
-    const mentor = await getUserByFirebaseId(firebaseId)
-    const proposal = await addMentorToProposal(id, mentor.id)
+    const mentor = await getUserByFirebaseId(firebaseId);
+    const proposal = await addMentorToProposal(id, mentor.id);
     if (proposal.id) {
       res.status(200).json(proposal);
     } else {
       res.status(404).json("User Not Found Error 404");
     }
-  }
-  catch (error) {
-    console.error(error) 
+  } catch (error) {
+    console.error(error);
     res.status(500).json({ error: "Internal Server Error 500" });
   }
-}  );
+});
 
 //DELETE ROUTE
 proposals.delete("/:id", async (req, res) => {

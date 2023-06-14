@@ -1,6 +1,7 @@
 //CONFIGURATION
 const express = require("express");
 const users = express.Router();
+const {  getProposalByUserId } = require("../queries/proposals")
 const {
   createUser,
   getUserByFirebaseId,
@@ -34,6 +35,21 @@ users.get("/:id", async (req, res) => {
   }
 });
 
+//GET PROPOSAL by userID // 1. create new route and query for getProposalByUserId 2. create fetch request for this route and query on front end.
+users.get("/:id/proposals", async (req, res) => {
+  const { id } = req.params;
+  const proposalByUser = await getProposalByUserId(id);
+  if (proposalByUser) {
+    res.json(proposalByUser);
+  } else {
+    res.status(404).json({
+      error: " Error 404 Proposal Or User Not Found"
+    });
+  }
+});
+
+
+//Get USer by firebase ID
 users.get("/:id/firebase", async (req, res) => {
   const { id } = req.params;
   const userByFirebase = await getUserByFirebaseId(id);
