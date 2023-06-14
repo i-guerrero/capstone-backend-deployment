@@ -25,15 +25,16 @@ const getUser = async (id) => {
 
 const getUserByFirebaseId = async (id) => {
   try {
-    const oneUser = await db.oneOrNone("SELECT * FROM users WHERE firebase_uid=$1", id);
+    const oneUser = await db.oneOrNone(
+      "SELECT * FROM users WHERE firebase_uid=$1",
+      id
+    );
     return oneUser;
   } catch (error) {
     console.log(error);
     return error;
   }
 };
-
-
 
 //CREATE
 const createUser = async (user) => {

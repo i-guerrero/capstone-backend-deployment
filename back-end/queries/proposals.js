@@ -26,6 +26,21 @@ const getProposal = async (id) => {
   }
 };
 
+//GET PROPOSAL BY NonprofitID
+const getProposalByUserId = async (id) => {
+  try {
+    const allProposals = await db.any(
+      "SELECT * FROM proposals WHERE non_profit_id=$1",
+      id
+    );
+    return allProposals;
+  } catch (error) {
+    console.log(error);
+    return error;
+  }
+};
+
+
 //CREATE
 const createProposal = async (proposal) => {
   try {
@@ -69,7 +84,7 @@ const putProposal = async (proposal, id) => {
   }
 };
 
-//UPdate Mentor Id
+//Add Mentor to a PROPOSAL that approved it. 
 const addMentorToProposal = async (proposalId, mentorId) => {
   try {
     const updatedProposal = db.one(
@@ -98,9 +113,11 @@ const deleteProposal = async (id) => {
 };
 
 module.exports = {
+  getProposalByUserId,
   createProposal,
   putProposal,
   deleteProposal,
   getAllProposals,
-  getProposal, addMentorToProposal
+  getProposal,
+  addMentorToProposal,
 };
