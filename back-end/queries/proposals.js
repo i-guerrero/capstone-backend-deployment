@@ -29,6 +29,7 @@ const getProposal = async (id) => {
 //GET PROPOSAL BY NonprofitID
 const getProposalByUserId = async (id) => {
   try {
+    console.log(id);
     const allProposals = await db.any(
       "SELECT * FROM proposals WHERE non_profit_id=$1",
       id
@@ -39,7 +40,6 @@ const getProposalByUserId = async (id) => {
     return error;
   }
 };
-
 
 //CREATE
 const createProposal = async (proposal) => {
@@ -84,7 +84,7 @@ const putProposal = async (proposal, id) => {
   }
 };
 
-//Add Mentor to a PROPOSAL that approved it. 
+//Add Mentor to a PROPOSAL that approved it.
 const addMentorToProposal = async (proposalId, mentorId) => {
   try {
     const updatedProposal = db.one(
